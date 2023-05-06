@@ -31,9 +31,9 @@ public class CriarSessaoSteps {
 		CriarSessaoPage.setJsonPath("error");
 	}
 	
-	@Given("^que possuo dados para login \"(.*?)\" \"(.*?)\" \"(.*?)\"$")
-	public static void quePossuoDadosParaLogin(String username, String password, String email) {
-		CriarSessaoPage.inicializarBodyRequestTodosDados(username, password, email);
+	@Given("^que possuo dados validos para login \"(.*?)\" \"(.*?)\"$")
+	public static void quePossuoDadosValidosParaLogin(String password, String email) {
+		CriarSessaoPage.inicializarBodyRequestTodosDadosLogin(password, email);
 	}
 	
 	@When("^crio uma sessao$")

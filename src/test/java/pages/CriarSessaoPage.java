@@ -38,6 +38,13 @@ public class CriarSessaoPage extends RequestPage {
 		CriarSessaoPage.bodyRequest.put("email", email);
 	}
 	
+	public static void inicializarBodyRequestTodosDadosLogin(String password, String email) {
+		CriarSessaoPage.bodyRequest= null;
+		CriarSessaoPage.bodyRequest= new JSONObject();
+		CriarSessaoPage.bodyRequest.put("password", password);
+		CriarSessaoPage.bodyRequest.put("email", email);
+	}
+	
 	public static void criarSessao() {
 		CriarSessaoPage.url= "https://reqres.in/api/login";
 		
@@ -77,7 +84,6 @@ public class CriarSessaoPage extends RequestPage {
 	}
 	
 	public static void salvarToken() {
-		CriarSessaoPage.bodyResponse= null;
-		CriarSessaoPage.bodyResponse.put("token", CriarSessaoPage.response.getBody().jsonPath().get("token").toString());
+		CriarSessaoPage.tokenSessao= CriarSessaoPage.response.getBody().jsonPath().get("token").toString();
 	}
 }
