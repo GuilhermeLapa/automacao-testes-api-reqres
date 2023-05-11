@@ -8,9 +8,6 @@ import io.restassured.http.Header;
 import io.restassured.specification.RequestSpecification;
 
 public class ConsultarListaUsuariosPage extends RequestPage {
-	public static int page;
-	public static int perPage;
-	
 	public static void consultarListaUsuarios() {
 		ConsultarListaUsuariosPage.url= "https://reqres.in/api/users";
 		
