@@ -80,7 +80,7 @@ public class CriarSessaoPage extends RequestPage {
 	}
 	
 	public static void verificarqueExisteCampo(String nomeCampo) {
-		Assert.assertTrue(CriarSessaoPage.response.getBody().asPrettyString().toString().contains(nomeCampo));
+		Assert.assertTrue(CriarSessaoPage.response.getBody().jsonPath().get("$").toString().contains(nomeCampo));
 	}
 	
 	public static void salvarToken() {

@@ -14,7 +14,5 @@ public class EncerrarSessaoPage extends RequestPage {
 		Header header= new Header("Content-Type", "application/jon");
 		request.header(header);
 		EncerrarSessaoPage.response= request.post();
-		
-		System.out.println(EncerrarSessaoPage.response.getBody().asPrettyString());
 	}
 }
