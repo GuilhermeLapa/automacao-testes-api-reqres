@@ -30,4 +30,8 @@ public class ConsultarUsuarioPage extends RequestPage {
 	public static void inicilizarIdUsuario(String id) {
 		ConsultarUsuarioPage.id= id;
 	}
+	
+	public static Object getId() {
+		return ConsultarUsuarioPage.id;
+	}
 }
