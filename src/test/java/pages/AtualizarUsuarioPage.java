@@ -56,4 +56,8 @@ public class AtualizarUsuarioPage extends RequestPage {
 		
 		AtualizarUsuarioPage.bodyRequest.put("job", ocupacao);
 	}
+	
+	public static Object getId() {
+		return AtualizarUsuarioPage.id;
+	}
 }
