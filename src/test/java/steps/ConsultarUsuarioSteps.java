@@ -23,6 +23,6 @@ public class ConsultarUsuarioSteps {
 	
 	@And("que possuo valor invalido de id de usuario \"(.*?)\"")
 	public static void quePossuoValorInvalidoDeIdDeUsuario(String valorId) {
-		ConsultarUsuarioPage.inicilizarIdUsuario(valorId);
+		ConsultarUsuarioPage.inicializarId(valorId);
 	}
 }

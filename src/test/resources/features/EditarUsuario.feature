@@ -7,7 +7,6 @@ Scenario Outline: Validar Atualizar Usuario com Sucesso
 	And crio um usuario
 	And salvo o valor do id
 	And possuo dados validos para atualizar usuario "<novoNome>" "<job>"
-	And possuo o id do usuario
 	When edito os dados do usuario
 	Then verifico status code 200
 	And verifico que ha o campo "name"
@@ -24,7 +23,6 @@ Scenario Outline: Validar Atualizar Usuario Apenas Nome Sucesso
 	And crio um usuario
 	And salvo o valor do id
 	And possuo Nome para atualizar usuario "<novoNome>"
-	And possuo o id do usuario
 	When edito os dados do usuario
 	Then verifico status code 200
 	And verifico que ha o campo "name"
@@ -39,7 +37,6 @@ Scenario Outline: Validar Atualizar Usuario Apenas Ocupacao Sucesso
 	And crio um usuario
 	And salvo o valor do id
 	And possuo Ocupacao para atualizar usuario "<job>"
-	And possuo o id do usuario
 	When edito os dados do usuario
 	Then verifico status code 200
 	And verifico que ha o campo "job"
@@ -54,7 +51,6 @@ Scenario Outline: Validar Valores de Dominio Campo Nome
 	And crio um usuario
 	And salvo o valor do id
 	And possuo Nome para atualizar usuario "<novoNome>"
-	And possuo o id do usuario
 	When edito os dados do usuario
 	Then verifico status code 200
 	And verifico que ha o campo "name"
@@ -69,7 +65,6 @@ Scenario Outline: Validar Valores de Dominio Campo Ocupacao
 	And crio um usuario
 	And salvo o valor do id
 	And possuo Ocupacao para atualizar usuario "<job>"
-	And possuo o id do usuario
 	When edito os dados do usuario
 	Then verifico status code 200
 	And verifico que ha o campo "job"

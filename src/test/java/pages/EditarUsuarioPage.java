@@ -6,7 +6,6 @@ import io.restassured.http.Header;
 import io.restassured.specification.RequestSpecification;
 
 public class EditarUsuarioPage extends RequestPage {
-	
 	public static void editarUsuario() {
 		EditarUsuarioPage.url= "https://reqres.in/api/users/";
 		
@@ -16,7 +15,7 @@ public class EditarUsuarioPage extends RequestPage {
 		request.header(header);
 		request.body(EditarUsuarioPage.bodyRequest.toJSONString());
 		
-		request.pathParam("id", AtualizarUsuarioPage.getId());
+		request.pathParam("id", AtualizarUsuarioPage.valorPassadoNoPath);
 		EditarUsuarioPage.response= request.patch("{id}");
 	}
 }

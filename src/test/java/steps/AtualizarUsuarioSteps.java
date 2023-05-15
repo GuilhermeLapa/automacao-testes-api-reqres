@@ -15,11 +15,6 @@ public class AtualizarUsuarioSteps {
 		AtualizarUsuarioPage.atualizarUsuario();
 	}
 	
-	@And("possuo o id do usuario")
-	public static void possuoOIdDoUsuario() {
-		AtualizarUsuarioPage.inicializarIdRetornoConsulta();
-	}
-	
 	@And("possuo Nome para atualizar usuario \"(.*?)\"")
 	public static void possuoNomeParaAtualizarUsuario(String nome) {
 		AtualizarUsuarioPage.inicializarNomeUsuario(nome);

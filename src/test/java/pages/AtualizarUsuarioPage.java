@@ -7,8 +7,6 @@ import io.restassured.http.Header;
 import io.restassured.specification.RequestSpecification;
 
 public class AtualizarUsuarioPage extends RequestPage {
-	private static Object id;
-	
 	public static void inicializarDadosValidosUsuario(String nome, String ocupacao) {
 		AtualizarUsuarioPage.bodyRequest= null;
 		AtualizarUsuarioPage.bodyRequest= new JSONObject();
@@ -26,21 +24,8 @@ public class AtualizarUsuarioPage extends RequestPage {
 		request.header(header);
 		request.body(AtualizarUsuarioPage.bodyRequest.toJSONString());
 		
-		request.pathParam("id", AtualizarUsuarioPage.id);
+		request.pathParam("id", AtualizarUsuarioPage.valorPassadoNoPath);
 		AtualizarUsuarioPage.response= request.put("{id}");
-	}
-	
-	public static void inicializarId(Object valor) {
-		if(valor instanceof Integer) {
-			AtualizarUsuarioPage.id= (Integer) valor;
-		}
-		else if(valor instanceof String) {
-				AtualizarUsuarioPage.id= (String) valor;
-			}
-	}
-	
-	public static void inicializarIdRetornoConsulta() {
-		inicializarId(ConsultarUsuarioPage.getId());
 	}
 	
 	public static void inicializarNomeUsuario(String nome) {
@@ -55,9 +40,5 @@ public class AtualizarUsuarioPage extends RequestPage {
 		AtualizarUsuarioPage.bodyRequest= new JSONObject();
 		
 		AtualizarUsuarioPage.bodyRequest.put("job", ocupacao);
-	}
-	
-	public static Object getId() {
-		return AtualizarUsuarioPage.id;
 	}
 }

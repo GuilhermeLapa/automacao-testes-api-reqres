@@ -14,6 +14,7 @@ public class RequestPage {
 	protected static String jsonPath;
 	protected static String tokenSessao;
 	protected static HashMap<String, Object> parametrosQuery;
+	protected static Object valorPassadoNoPath;
 	
 	public static void setJsonPath(String jsonPath) {
 		RequestPage.jsonPath= jsonPath;
