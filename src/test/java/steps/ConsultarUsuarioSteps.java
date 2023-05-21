@@ -1,8 +1,8 @@
 package steps;
 
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
 import pages.ConsultarUsuarioPage;
 
 public class ConsultarUsuarioSteps {
@@ -21,7 +21,7 @@ public class ConsultarUsuarioSteps {
 		ConsultarUsuarioPage.inicializarIdVazio();
 	}
 	
-	@And("que possuo valor invalido de id de usuario \"(.*?)\"")
+	@And("que possuo valor invalido de id de usuario {string}")
 	public static void quePossuoValorInvalidoDeIdDeUsuario(String valorId) {
 		ConsultarUsuarioPage.inicializarId(valorId);
 	}

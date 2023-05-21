@@ -1,6 +1,6 @@
 # encoding: iso-8859-1
 @Testar
-Feature: Consultar Lista Usuarios
+Feature: GET - Consultar Lista Usuarios
 
 Scenario: Validar Consultar Lista Usuarios Sem Parametros Sucesso 
 	Given que possuo usuarios cadastrados

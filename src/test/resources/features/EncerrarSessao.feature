@@ -1,6 +1,6 @@
 # encoding: iso-8859-1
 @Testar
-Feature:
+Feature: POST - Encerrar Sessão
 
 Scenario Outline: Validar Encerrar Sessao com Sucesso
 	Given que possuo dados validos para cadastro "<username>" "<password>" "<email>"

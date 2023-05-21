@@ -1,6 +1,6 @@
 # encoding: iso-8859-1
 @Testar
-Feature: Consultar Usuario por Id
+Feature: GET - Consultar Usuario por Id
 
 Scenario Outline: Validar Consultar Usuario por Id Sucesso
 	Given que possuo dados validos para cadastro "<username>" "<password>" "<email>"

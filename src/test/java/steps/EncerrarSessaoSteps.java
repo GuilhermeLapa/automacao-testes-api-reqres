@@ -1,6 +1,6 @@
 package steps;
 
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.When;
 import pages.EncerrarSessaoPage;
 
 public class EncerrarSessaoSteps {

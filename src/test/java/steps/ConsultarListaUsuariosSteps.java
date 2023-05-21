@@ -1,8 +1,8 @@
 package steps;
 
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
 import pages.ConsultarListaUsuariosPage;
 
 public class ConsultarListaUsuariosSteps {
@@ -16,17 +16,17 @@ public class ConsultarListaUsuariosSteps {
 		ConsultarListaUsuariosPage.consultarListaUsuarios();
 	}
 	
-	@And("^informo a quantidade de usuarios (\\d+)$")
+	@And("informo a quantidade de usuarios {int}")
 	public static void informoAQuantidadeDeUsuarios(Integer qtdUsuarios) {
 		ConsultarListaUsuariosPage.inicializarParametroQuery("per_page", qtdUsuarios);
 	}
 	
-	@And("^informo a quantidade de paginas (\\d+)$")
+	@And("informo a quantidade de paginas {int}")
 	public static void informoAQuantidadeDePaginas(Integer qtdPaginas) {
 		ConsultarListaUsuariosPage.inicializarParametroQuery("page", qtdPaginas);
 	}
 	
-	@And("^verifico no body \"(.*?)\" que ha o campo \"(.*?)\"$")
+	@And("verifico no body {string} que ha o campo {string}")
 	public static void verificoQueHaOCampo(String jsonPath, String nomeCampo) {
 		ConsultarListaUsuariosPage.verificarqueExisteCampo(jsonPath, nomeCampo);
 	}
