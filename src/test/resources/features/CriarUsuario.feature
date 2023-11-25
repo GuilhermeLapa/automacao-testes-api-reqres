@@ -1,69 +1,71 @@
-# encoding: iso-8859-1
-@Testar
-Feature: POST Criar um Usu�rio
+# language: pt
+# encoding iso-8859-1
 
-Scenario Outline: Validar Obrigatoriedade Campo Username
-	Given que nao possuo username "<email>" "<password>"
-	When crio um usuario
-	Then verifico status code 200
-	And verifico que ha o campo "id"
-	And verifico o valor 4 no campo "id"
-	And verifico que ha o campo "token"
-	And verifico o valor "QpwL5tke4Pnpja7X4" no campo "token"
-	Examples: 
+@Testar
+Funcionalidade: POST Criar um Usuário
+
+Cenário: Validar Obrigatoriedade Campo Username
+	Dado que nao possuo username "<email>" "<password>"
+	Quando crio um usuario
+	Então verifico status code 200
+	E verifico que ha o campo "id"
+	E verifico o valor 4 no campo "id"
+	E verifico que ha o campo "token"
+	E verifico o valor "QpwL5tke4Pnpja7X4" no campo "token"
+	Exemplos: 
 	| email              | password |
 	| eve.holt@reqres.in | pistol   |
 
-Scenario Outline: Validar Obrigatoriedade Campo Email
-	Given que nao possuo email "<username>" "<password>"
-	When crio um usuario
-	Then verifico status code 400
-	And verifico que ha o campo "error"
-	And verifico a mensagem "Note: Only defined users succeed registration"
-	Examples: 
+Cenário: Validar Obrigatoriedade Campo Email
+	Dado que nao possuo email "<username>" "<password>"
+	Quando crio um usuario
+	Então verifico status code 400
+	E verifico que ha o campo "error"
+	E verifico a mensagem "Note: Only defined users succeed registration"
+	Exemplos: 
 	| username | password |
 	| Eve Holt | pistol   |
 
-Scenario Outline: Validar Obrigatoriedade Campo Password
-	Given que nao possuo password "<email>" "<username>"
-	When crio um usuario
-	Then verifico status code 400
-	And verifico que ha o campo "error"
-	And verifico a mensagem "Missing password"
-	Examples: 
+Cenário: Validar Obrigatoriedade Campo Password
+	Dado que nao possuo password "<email>" "<username>"
+	Quando crio um usuario
+	Então verifico status code 400
+	E verifico que ha o campo "error"
+	E verifico a mensagem "Missing password"
+	Exemplos: 
 	| email              | username |
 	| eve.holt@reqres.in | Eve Holt |
 
-Scenario Outline: Validar Erro Cadastro de Usu�rio N�o Registrado
-	Given que possuo dados de usuario nao registrado "<username>" "<password>" "<email>"
-	When crio um usuario
-	Then verifico status code 400
-	And verifico que ha o campo "error"
-	And verifico a mensagem "Note: Only defined users succeed registration"
-	Examples: 
+Cenário: Validar Erro Cadastro de Usuário Não Registrado
+	Dado que possuo dados de usuario nao registrado "<username>" "<password>" "<email>"
+	Quando crio um usuario
+	Então verifico status code 400
+	E verifico que ha o campo "error"
+	E verifico a mensagem "Note: Only defined users succeed registration"
+	Exemplos: 
 	| username              | password     | email                     |
 	| Usuario NaoRegistrado | senhaTeste   | emailTeste@emailTeste.com |
 
-Scenario Outline: Validar Valores de Dom�nio Campo Email
-	Given que possuo email invalido "<username>" "<password>" "<email>"
-	When crio um usuario
-	Then verifico status code 400
-	And verifico que ha o campo "error"
-	And verifico a mensagem "Note: Only defined users succeed registration"
-	Examples: 
+Cenário: Validar Valores de Domínio Campo Email
+	Dado que possuo email invalido "<username>" "<password>" "<email>"
+	Quando crio um usuario
+	Então verifico status code 400
+	E verifico que ha o campo "error"
+	E verifico a mensagem "Note: Only defined users succeed registration"
+	Exemplos: 
 	| username     | password | email         |
 	| Eve Holt     | senha    | \@email.com   |
 	| Eve Holt     | senha    | email@email   |
 	| Eve Holt     | senha    | .com          |
 
-Scenario Outline: Validar Criar Usu�rio Sucesso
-	Given que possuo dados validos para cadastro "<username>" "<password>" "<email>"
-	When crio um usuario
-	Then verifico status code 200
-	And verifico que ha o campo "id"
-	And verifico o valor 4 no campo "id"
-	And verifico que ha o campo "token"
-	And verifico o valor "QpwL5tke4Pnpja7X4" no campo "token"
-	Examples: 
+Cenário: Validar Criar Usuário Sucesso
+	Dado que possuo dados validos para cadastro "<username>" "<password>" "<email>"
+	Quando crio um usuario
+	Então verifico status code 200
+	E verifico que ha o campo "id"
+	E verifico o valor 4 no campo "id"
+	E verifico que ha o campo "token"
+	E verifico o valor "QpwL5tke4Pnpja7X4" no campo "token"
+	Exemplos: 
 	| username | password | email              |
 	| Eve Holt | pistol   | eve.holt@reqres.in |

@@ -1,10 +1,10 @@
 package steps;
 
-import io.cucumber.java.en.When;
+import io.cucumber.java.pt.Quando;
 import pages.DeletarUsuarioPage;
 
 public class DeletarUsuarioSteps {
-	@When("deleto o usuario")
+	@Quando("deleto o usuario")
 	public static void deletoOUsuario() {
 		DeletarUsuarioPage.deletarUsuario();
 	}

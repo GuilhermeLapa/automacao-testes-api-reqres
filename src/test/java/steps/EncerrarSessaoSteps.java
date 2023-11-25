@@ -1,10 +1,10 @@
 package steps;
 
-import io.cucumber.java.en.When;
+import io.cucumber.java.pt.Quando;
 import pages.EncerrarSessaoPage;
 
 public class EncerrarSessaoSteps {
-	@When("encerro uma sessao")
+	@Quando("encerro uma sessao")
 	public static void encerroUmaSessao() {
 		EncerrarSessaoPage.encerrarSessao();
 	}

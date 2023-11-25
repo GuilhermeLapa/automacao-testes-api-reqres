@@ -1,55 +1,57 @@
-# encoding: iso-8859-1
-@Testar
-Feature: POST Criar uma Sess�o
+# language: pt
+# encoding iso-8859-1
 
-Scenario Outline: Validar Obrigatoriedade Username
-	Given que nao possuo username "<email>" "<password>"
-	When crio uma sessao
-	Then verifico status code 400
-	And verifico que ha o campo "error"
-	And verifico a mensagem "user not found"
-	Examples: 
+@Testar
+Funcionalidade: POST Criar uma Sessão
+
+Cenário: Validar Obrigatoriedade Username
+	Dado que nao possuo username "<email>" "<password>"
+	Quando crio uma sessao
+	Então verifico status code 400
+	E verifico que ha o campo "error"
+	E verifico a mensagem "user not found"
+	Exemplos: 
 	| email           | password |
 	| email@email.com | senha    |
 
-Scenario Outline: Validar Obrigatoriedade Email
-	Given que nao possuo email "<username>" "<password>"
-	When crio uma sessao
-	Then verifico status code 400
-	And verifico que ha o campo "error"
-	And verifico a mensagem "user not found"
-	Examples: 
+Cenário: Validar Obrigatoriedade Email
+	Dado que nao possuo email "<username>" "<password>"
+	Quando crio uma sessao
+	Então verifico status code 400
+	E verifico que ha o campo "error"
+	E verifico a mensagem "user not found"
+	Exemplos: 
 	| username           | password |
 	| Usuario Testes     | senha    |
 
-Scenario Outline: Validar Obrigatoriedade Password
-	Given que nao possuo password "<username>" "<email>"
-	When crio uma sessao
-	Then verifico status code 400
-	And verifico que ha o campo "error"
-	And verifico a mensagem "Missing password"
-	Examples: 
+Cenário: Validar Obrigatoriedade Password
+	Dado que nao possuo password "<username>" "<email>"
+	Quando crio uma sessao
+	Então verifico status code 400
+	E verifico que ha o campo "error"
+	E verifico a mensagem "Missing password"
+	Exemplos: 
 	| username           | email           |
 	| Usuario Testes     | email@email.com |
 
-Scenario Outline: Validar Valores de Dominio Email
-	Given que possuo email invalido "<username>" "<password>" "<email>"
-	When crio uma sessao
-	Then verifico status code 400
-	And verifico que ha o campo "error"
-	And verifico a mensagem "user not found"
-	Examples: 
+Cenário: Validar Valores de Dominio Email
+	Dado que possuo email invalido "<username>" "<password>" "<email>"
+	Quando crio uma sessao
+	Então verifico status code 400
+	E verifico que ha o campo "error"
+	E verifico a mensagem "user not found"
+	Exemplos: 
 	| username           | password | email       |
 	| Usuario Testes     | senha    | \@email.com |
 	| Usuario Testes     | senha    | email@email |
 	| Usuario Testes     | senha    | .com        |
 
-Scenario Outline: Validar Login Sucesso
-	Given que possuo dados validos para login "<password>" "<email>"
-	When crio uma sessao
-	Then verifico status code 200
-	And verifico que ha o campo "token"
-	And salvo o token da sessao
-	Examples: 
+Cenário: Validar Login Sucesso
+	Dado que possuo dados validos para login "<password>" "<email>"
+	Quando crio uma sessao
+	Então verifico status code 200
+	E verifico que ha o campo "token"
+	E salvo o token da sessao
+	Exemplos: 
 	| password | email              |
 	| pistol   | eve.holt@reqres.in |

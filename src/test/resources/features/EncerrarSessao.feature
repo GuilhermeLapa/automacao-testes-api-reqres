@@ -1,13 +1,15 @@
-# encoding: iso-8859-1
-@Testar
-Feature: POST - Encerrar Sess�o
+# language: pt
+# encoding iso-8859-1
 
-Scenario Outline: Validar Encerrar Sessao com Sucesso
-	Given que possuo dados validos para cadastro "<username>" "<password>" "<email>"
-	And crio um usuario
-	And crio uma sessao
-	When encerro uma sessao
-	Then verifico status code 200
-	Examples: 
+@Testar
+Funcionalidade: POST - Encerrar Sessão
+
+Cenário: Validar Encerrar Sessão com Sucesso
+	Dado que possuo dados validos para cadastro "<username>" "<password>" "<email>"
+	E crio um usuario
+	E crio uma sessao
+	Quando encerro uma sessao
+	Então verifico status code 200
+	Exemplos: 
 	| username | password | email              |
 	| Eve Holt | pistol   | eve.holt@reqres.in |
